@@ -1,10 +1,14 @@
 // import "dotenv/config"
+import { app } from "./app.js"
 
 import { connectionDB } from "./db/index.js"
-import mongoose from "mongoose"
-
-// dotenv.config({
-//   path: "./env",
-// })
 
 connectionDB()
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log("Server is running in the Port" + `${process.env.PORT}`)
+    })
+  })
+  .catch((error) => {
+    console.log("MONGO DB connetion Failed!!", error)
+  })
