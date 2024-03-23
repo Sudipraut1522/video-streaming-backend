@@ -16,8 +16,6 @@ app.use(
   app.use(express.static("public")),
   app.use(cookieParser())
 
-// // Routes import
-
-app.use("/users", router)
+app.use("/api/v1/users", router)
 
 export { app }
