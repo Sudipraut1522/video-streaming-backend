@@ -2,7 +2,7 @@ import { Schema } from "mongoose"
 import mongoose from "mongoose"
 import Jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
-import { Video } from "./video.model"
+import { Video } from "./video.model.js"
 const userSchema = new Schema(
   {
     username: {
